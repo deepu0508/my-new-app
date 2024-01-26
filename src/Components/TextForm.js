@@ -120,7 +120,7 @@ export default function TextForm(props) {
         if (text === '') {
             props.showAlert("Text has been not present", 'warning')
         } else {
-            let str = `!@#$%^&*()_+-={}|[]\":;'<>?,./~`
+            let str = `!@#$%^&*()_+-={}|[]''\":;'<>?,./~`
             let newText = ""
             for (let i in text) {
                 if (!str.includes(text[i])) {
@@ -275,7 +275,7 @@ export default function TextForm(props) {
                 <h1 className={`heading text-${props.mode === 'dark' ? 'light' : 'dark'}`} style={{ transition: '1s' }}>{props.heading}</h1>
                 {/* <button type="button" className="btn btn-cls cls btn-primary" onClick={toggleDarkMode}>{btnMode}</button> */}
                 <div className="mb-3">
-                    <textarea className={`form-control my-3 text text-${props.mode === 'dark' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode === 'dark' ? '#343a40' : 'white', transition: '1s' }} value={text} onChange={onChangeHandler} id="text" rows="5"></textarea>
+                    <textarea className={`form-control my-3 text text-${props.mode === 'dark' ? 'light' : 'dark'}`} style={{ backgroundColor: props.mode === 'dark' ? '#343a40' : 'white', transition: '1s',resize:'none' }} value={text} onChange={onChangeHandler} id="text" rows="5"></textarea>
                 </div>
                 <div className="container">
                     <button className="btn btn-cls cls btn-primary mb-3 mx-3 mt-3" onClick={toUpper}>Convert to Uppercase</button>

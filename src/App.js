@@ -4,12 +4,12 @@ import Navbar from './Components/Navbar';
 import { useState } from 'react';
 import Alert from './Components/Alert';
 
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
-import About from './Components/About';
+// import {
+//   BrowserRouter,
+//   Route,
+//   Routes,
+// } from "react-router-dom";
+// import About from './Components/About';
 
 function App() {
   const [alert, setAlert] = useState(null)
@@ -116,17 +116,18 @@ function App() {
       {/* <Navbar title="TextUtils" aboutText="About TextUtils"/> */}
 
       {/* <Navbar /> */}
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Navbar title="TextUtils" toggleMode={toggleMode} mode={mode} textMode={strmode} blueText={blueText} blueMode={showBlueMode} greenText={greenText} greenMode={showGreenMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          <Routes>
+          {/* <Routes> */}
             {/* Every Route is required every element : this is syntax Under Route element is component*/}
-            <Route exact path="/about" element={<About />} /> 
-            <Route exact path="/" element={<TextForm heading="Enter the text to analyze below " mode={mode} showAlert={showAlert} />} />
-          </Routes>
+            {/* <Route exact path="/about" element={<About />} />  */}
+            {/* <Route exact path="/" element={<TextForm heading="Enter the text to analyze below " mode={mode} showAlert={showAlert} />} /> */}
+            <TextForm heading="Enter the text to analyze below " mode={mode} showAlert={showAlert} />
+          {/* </Routes> */}
         </div>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </>
   );
 }
